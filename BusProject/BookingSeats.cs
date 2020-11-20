@@ -7,8 +7,20 @@ using System.Threading.Tasks;
 namespace BusProject
 {
     class BookingSeats
-    {
-        public void checkSeats(){
+    { 
+        private int numOfSeatsBus =3 ;
+        private int numOfSeatsUser =2 ;
+
+        public void checkSeats() { 
+
+            if(numOfSeatsUser < numOfSeatsBus){
+                // BooK();
+                numOfSeatsBus -= numOfSeatsUser ;
+            }
+            else{
+                Console.WriteLine("sorry , there are not available seats !")
+            }
+                
 
         }
     }
