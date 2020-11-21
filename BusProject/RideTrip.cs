@@ -59,8 +59,8 @@ namespace BusProject
                 for (int j = 0; j < Bus.BusTimeLine.GetLength(1); j++)
                 {
                    // Console.Write(" Bus number  {0} :  ", i + 1);
-                   // Console.Write(" Bus No {0} : {1} \n ", i+1 ,Bus.BusTimeLine[i, j]);
-                       Console.Write(" Bus No {0} : {1} \n ", i+1 ,Bus.BusTimeLine.GetValue());
+                    Console.Write(" Bus No {0} : {1} \n ", i+1 ,Bus.BusTimeLine[i, j]);
+                    //   Console.Write(" Bus No {0} : {1} \n ", i+1 ,Bus.BusTimeLine);
 
                 }     
             }
