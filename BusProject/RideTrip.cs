@@ -62,7 +62,7 @@ namespace BusProject
                    // Console.Write(" Bus No {0} : {1} \n ", i+1 ,Bus.BusTimeLine[i, j]);
                        Console.Write(" Bus No {0} : {1} \n ", i+1 ,Bus.BusTimeLine.GetValue());
 
-                }
+                }     
             }
            // Console.WriteLine("Please Choose Bus ID  :");
            // Console.WriteLine("--------------------------------------------");
