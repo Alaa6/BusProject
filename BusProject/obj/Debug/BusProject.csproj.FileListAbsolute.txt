@@ -4,3 +4,10 @@ C:\Users\dinaa\OneDrive\Documents\Visual Studio 2015\Projects\BusProject\BusProj
 C:\Users\dinaa\OneDrive\Documents\Visual Studio 2015\Projects\BusProject\BusProject\obj\Debug\BusProject.csprojResolveAssemblyReference.cache
 C:\Users\dinaa\OneDrive\Documents\Visual Studio 2015\Projects\BusProject\BusProject\obj\Debug\BusProject.exe
 C:\Users\dinaa\OneDrive\Documents\Visual Studio 2015\Projects\BusProject\BusProject\obj\Debug\BusProject.pdb
+D:\my projects\BusProject\BusProject\obj\Debug\BusProject.csprojAssemblyReference.cache
+D:\my projects\BusProject\BusProject\obj\Debug\BusProject.csproj.CoreCompileInputs.cache
+D:\my projects\BusProject\BusProject\obj\Debug\BusProject.exe
+D:\my projects\BusProject\BusProject\obj\Debug\BusProject.pdb
+D:\my projects\BusProject\BusProject\bin\Debug\BusProject.exe.config
+D:\my projects\BusProject\BusProject\bin\Debug\BusProject.exe
+D:\my projects\BusProject\BusProject\bin\Debug\BusProject.pdb

@@ -6,14 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusProject
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+namespace BusProject {
+    class Program {  
+        static void Main(string[] args){
 
             Route lines = new Route();
+            RideTrip rideTrip = new RideTrip();
+            Bus bus = new Bus();
+            
+
                 //Stations of all lines:
                 Console.WriteLine("Stations for line1: 1 for Helwan, 2 for Helwan University, 3 for Maadi, 4 for Al-Sadat, 5 for Demerdash, 6 for Ain Shams, 7 for Elmarg");
                 Console.WriteLine("--------------------------------------------");
@@ -83,9 +84,11 @@ namespace BusProject
                 //    Console.WriteLine("There are only three lines");
 
 
-            }
-            RideTrip rt = new RideTrip();
-            Route lines = new Route();
+
+            /*test*/
+
+             RideTrip rt = new RideTrip();
+          //  Route lines = new Route();
 
             Console.WriteLine("Please Choose the Start point :");
             Console.WriteLine("Stations for line1: 1 for "+lines.line1[0]+ ", 2 for "+ lines.line1[1]+", 3 for "+lines.line1[2]
@@ -105,9 +108,14 @@ namespace BusProject
             int numOfEndPoint = int.Parse(Console.ReadLine());
             rt.setnumOfEndStation(numOfEndPoint);
 
+            rideTrip.Booking();
+          
 
             Console.WriteLine("The Trip cost is: {0}", rt.cost(rt.getnumOfStartStation(), rt.getnumOfEndStation()));
+
             Console.ReadKey();
+            }
+            
         }
 
 
