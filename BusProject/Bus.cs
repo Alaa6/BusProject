@@ -8,47 +8,6 @@ namespace BusProject
 {
     class Bus
     {
-        private int busId ;
-        private string time;
-        private int numOfSeatsBus ;
-       
-
-        public void setBusId(int _busId)
-        {
-            busId = _busId;
-             
-        }
-
-        public int getBusId()
-        {
-            return busId ;
-
-        }
-
-        public void setNumOfSeatsBus(int _numOfSeatsBus)
-        {
-            numOfSeatsBus = _numOfSeatsBus;
-
-        }
-
-        public int getNumOfSeatsBus()
-        {
-            return numOfSeatsBus;
-
-        }
-
-          
-         public void setTime(string _time)
-          {
-             time = _time;
-
-          }
-
-          public string getTime()
-             {
-               return time;
-             }
-
 
         // table 1 
         public static object[,] BusTimeLine = new object[12, 2] {{ 1,"7:00 AM" }, { 2, "8:00 AM" }, { 3, "9:00 AM" } ,

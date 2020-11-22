@@ -9,50 +9,76 @@ namespace BusProject
     class RideTrip
     {
         
-        private int numOfStartStation;
-        private int numOfEndStation;
-        private int numOfSeatsUser =3;
+        private static int numOfStartStation;
+        private static int numOfEndStation;
+        private static int numOfSeatsUser =3;
+        private static int ticketId = 0;
 
 
-
-
-
-        public void setnumOfStartStation(int numOfStartStation)
+        public static void setnumOfStartStation(int NumOfStartStation)
         {
-            this.numOfStartStation = numOfStartStation;
+            numOfStartStation = NumOfStartStation;
         }
-        public int getnumOfStartStation()
+        public static int getnumOfStartStation()
         {
             return numOfStartStation;
         }
 
-        public void setnumOfEndStation(int numOfEndStation)
+        public static void setnumOfEndStation(int NumOfEndStation)
         {
-            this.numOfEndStation = numOfEndStation;
+            numOfEndStation = NumOfEndStation;
         }
-        public int getnumOfEndStation()
+        public static int getnumOfEndStation()
         {
             return numOfEndStation;
         }
 
-       
-        public int cost(int numOfStartStation, int numOfEndStation)
+        public static int cost(int numOfStartStation, int numOfEndStation)
         {
-            int Cost = Math.Abs((numOfStartStation - numOfEndStation) * 2);
 
+            int Cost, age;
+
+            Console.WriteLine("Please enter your age:");
+            age = int.Parse(Console.ReadLine());
+
+            if (age > 60)
+                Cost = Math.Abs((numOfStartStation - numOfEndStation) * 1);
+            else if (age < 5)
+                Cost = 0;
+            else
+                Cost = Math.Abs((numOfStartStation - numOfEndStation) * 2);
             return Cost;
         }
 
-
-        public void Booking()
+        public static void display()
         {
-            int ticketId  // generated 
-                , busId  , numOfSeatsBus =5;
+            Console.WriteLine("Please Choose the Start point :");
+            Console.WriteLine("Stations for line1: 1 for " + Route.line1[0] + ", 2 for " + Route.line1[1] + ", 3 for " + Route.line1[2]
+                + ", 4 for " + Route.line1[3] + ", 5 for " + Route.line1[4] + ", 6 for " + Route.line1[5] + ", 7 for " + Route.line1[6]);
+            Console.WriteLine("--------------------------------------------");
+            int numOfStartPoint = int.Parse(Console.ReadLine());
+            setnumOfStartStation(numOfStartPoint);
+            Console.WriteLine("Please Choose the End point :");
+            Console.WriteLine("Stations for line1: 1 for " + Route.line1[0] + ", 2 for " + Route.line1[1] + ", 3 for " + Route.line1[2] + ", 4 for " + Route.line1[3] + ", 5 for " + Route.line1[4] + ", 6 for " + Route.line1[5] + ", 7 for " + Route.line1[6]);
+            Console.WriteLine("--------------------------------------------");
+
+            int numOfEndPoint = int.Parse(Console.ReadLine());
+            setnumOfEndStation(numOfEndPoint);
+
+
+            Console.WriteLine("The Trip cost is: {0}", cost(getnumOfStartStation(), getnumOfEndStation()));
+        }
+        public static int generation()
+        {
+            return ticketId += 1;
+        }
+
+        public static void Booking()
+        {
+            int  busId  , numOfSeatsBus =5;
             string time , startStation , endStation;
             Bus bus = new Bus();
-
-
-
+           
             for (int i = 0; i < Bus.BusTimeLine.GetLength(0); i++)
             {
                
@@ -74,7 +100,7 @@ namespace BusProject
 
             if (numOfSeatsUser < numOfSeatsBus)
             {
-                ticketId = 1;
+                ticketId = generation();
                 busId = 2;
                 time = "7:00";
                 startStation = "helwan";
@@ -90,15 +116,6 @@ namespace BusProject
             {
                 Console.WriteLine("sorry , there are not available seats !");
             }
-
-
-
-
-
-
-
-
-
 
         }
 
