@@ -11,7 +11,8 @@ namespace BusProject
         
         private int numOfStartStation;
         private int numOfEndStation;
-        private int numOfSeatsUser =3;
+        private int numOfSeatsUser ;
+        private int numOfSeatsBus ;
 
 
 
@@ -47,11 +48,14 @@ namespace BusProject
         public void Booking()
         {
             int ticketId  // generated 
-                , busId  , numOfSeatsBus =5;
+                , busId ;
             string time , startStation , endStation;
             Bus bus = new Bus();
+            numOfSeatsBus = Bus.BusSeats[1,0];
 
 
+
+            Console.WriteLine(" Bus No  | press  | Time       | press " );
 
             for (int i = 0; i < Bus.BusTimeLine.GetLength(0); i++)
             {
@@ -59,18 +63,34 @@ namespace BusProject
                 for (int j = 0; j < Bus.BusTimeLine.GetLength(1); j++)
                 {
                    // Console.Write(" Bus number  {0} :  ", i + 1);
-                    Console.Write(" Bus No {0} : {1} \n ", i+1 ,Bus.BusTimeLine[i, j]);
-                    //   Console.Write(" Bus No {0} : {1} \n ", i+1 ,Bus.BusTimeLine);
-
+                    Console.Write(" {0}     | {1}     | {2}      | {3}       \n ",Bus.BusTimeLine[i,0 ] , i+1 , Bus.BusTimeLine[i,1 ] , j+1);
+                    Console.WriteLine("--------------------------------------------");
                 }     
             }
-           // Console.WriteLine("Please Choose Bus ID  :");
-           // Console.WriteLine("--------------------------------------------");
+
+             for (int i = 0; i < 5; i++) {
+            
+            for (int j = 0; j < 2; j++) {
+               Console.WriteLine("a[{0},{1}] = {2}", i, j, Bus.BusTimeLine[i,j]);
+            }
+         }
+
             Console.WriteLine("Please Choose Bus No :");
             Console.WriteLine("--------------------------------------------");
-            int chooseBusNumber  = int.Parse(Console.ReadLine());
-          //  Bus.BusTimeLine[chooseBusNumber+1 ,]
+            int chooseBusNumber  = int.Parse(Console.ReadLine()); 
+            Console.WriteLine("Please Choose Bus Time :");
+            Console.WriteLine("--------------------------------------------");
+            int chooseBusTime  = int.Parse(Console.ReadLine()); 
 
+             object choosed = Bus.BusTimeLine[chooseBusNumber,chooseBusTime ];
+
+              Console.WriteLine(" How many seats you need ? " );
+              Console.WriteLine("--------------------------------------------");
+               numOfSeatsUser  = int.Parse(Console.ReadLine()); 
+
+            
+            Console.WriteLine("seats No of user is : {0} and of bus is: {1}" ,numOfSeatsUser ,numOfSeatsBus);
+    
 
             if (numOfSeatsUser < numOfSeatsBus)
             {

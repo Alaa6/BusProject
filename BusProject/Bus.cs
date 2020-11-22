@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BusProject
 {
     class Bus
-    {
+    {       
         private int busId ;
         private string time;
         private int numOfSeatsBus ;
