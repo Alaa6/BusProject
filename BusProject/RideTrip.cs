@@ -13,6 +13,7 @@ namespace BusProject
         private int numOfEndStation;
         private int numOfSeatsUser ;
         private int numOfSeatsBus ;
+        private int ticketId =1;
 
 
 
@@ -45,65 +46,64 @@ namespace BusProject
         }
 
 
+        public int generateTicketId (){
+
+          return  ticketId += 1 ;
+        }
+
+
         public void Booking()
         {
-            int ticketId  // generated 
-                , busId ;
+           
+  
             string time , startStation , endStation;
             Bus bus = new Bus();
-            numOfSeatsBus = Bus.BusSeats[1,0];
+          //  numOfSeatsBus = Bus.BusSeat[1, 1];
+              //  Bus.BusSeats[1,2];
+          
 
 
 
-            Console.WriteLine(" Bus No  | press  | Time       | press " );
+             bus.DisplayTime2();
 
-            for (int i = 0; i < Bus.BusTimeLine.GetLength(0); i++)
-            {
-               
-                for (int j = 0; j < Bus.BusTimeLine.GetLength(1); j++)
-                {
-                   // Console.Write(" Bus number  {0} :  ", i + 1);
-                    Console.Write(" {0}     | {1}     | {2}      | {3}       \n ",Bus.BusTimeLine[i,0 ] , i+1 , Bus.BusTimeLine[i,1 ] , j+1);
-                    Console.WriteLine("--------------------------------------------");
-                }     
-            }
-
-             for (int i = 0; i < 5; i++) {
             
-            for (int j = 0; j < 2; j++) {
-               Console.WriteLine("a[{0},{1}] = {2}", i, j, Bus.BusTimeLine[i,j]);
-            }
-         }
+            
+
+            
+               
 
             Console.WriteLine("Please Choose Bus No :");
             Console.WriteLine("--------------------------------------------");
             int chooseBusNumber  = int.Parse(Console.ReadLine()); 
-            Console.WriteLine("Please Choose Bus Time :");
-            Console.WriteLine("--------------------------------------------");
-            int chooseBusTime  = int.Parse(Console.ReadLine()); 
-
-             object choosed = Bus.BusTimeLine[chooseBusNumber,chooseBusTime ];
-
-              Console.WriteLine(" How many seats you need ? " );
-              Console.WriteLine("--------------------------------------------");
-               numOfSeatsUser  = int.Parse(Console.ReadLine()); 
-
+            object timeChoosed = Bus.BusTimeLine2[chooseBusNumber, 1 ];
+             object busId = bus.SelectTime2(timeChoosed) ; 
             
-            Console.WriteLine("seats No of user is : {0} and of bus is: {1}" ,numOfSeatsUser ,numOfSeatsBus);
-    
+            Console.WriteLine(" How many seats you need ? " );
+            Console.WriteLine("--------------------------------------------");
+            numOfSeatsUser  = int.Parse(Console.ReadLine());
 
+             numOfSeatsBus =  Bus.BusSeats[chooseBusNumber, 1];
+             Console.WriteLine("numOfSeatsBus {0}" ,numOfSeatsBus );
+
+             
+    
             if (numOfSeatsUser < numOfSeatsBus)
             {
-                ticketId = 1;
-                busId = 2;
-                time = "7:00";
-                startStation = "helwan";
-                endStation = "L tgmo3";
-                numOfSeatsBus -= numOfSeatsUser;
+               
+                  int ticketId =  generateTicketId()  ;
+                 
+              
+
+                  time = "7:00";
+                  startStation = "helwan";
+                  endStation = "L tgmo3";
+                  numOfSeatsBus -= numOfSeatsUser;
+                  bus.setNumOfSeatsBus(numOfSeatsBus);
 
                 Console.WriteLine("Thank you for your booking , We wish you a happy journey ^_^ \n " +
-                    "your ticket ID is :  " + ticketId + "\n Bus ID is : " + busId + " Trip time is : " + time +
-                    "Trip time is : " + startStation + " " + endStation 
+                    "your ticket ID is :  " +ticketId+ "\n Bus ID is : " + busId + " Trip time is : " + timeChoosed +
+                    " Trip  is : " + startStation + " " + endStation  + " the number of your seats is  " + numOfSeatsUser +" the number of bus seats is "
+                      +numOfSeatsBus
                     ) ;
             }
             else
