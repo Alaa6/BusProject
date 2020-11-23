@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace BusProject
 {
     class Bus
-    {    
+    {
+
+       
          private static int numOfSeatsBus =20 ;
 
         public int getNumOfSeatsBus (){
