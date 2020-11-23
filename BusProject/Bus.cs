@@ -38,10 +38,10 @@ namespace BusProject
         /// table 2
 
 
-        public static object[,] BusTimeLine2 = new object[12, 2]{{ 4,"7:00 AM" }, { 5, "8:00 AM" }, {6, "9:00 AM" } ,
+       /* public static object[,] BusTimeLine2 = new object[12, 2]{{ 4,"7:00 AM" }, { 5, "8:00 AM" }, {6, "9:00 AM" } ,
                                                                  { 4,"10:00 AM"}, { 5, "11:00 AM"}, {6, "12:00 AM"} ,
                                                                  { 4,"1:00 PM" }, { 5, "2:00 PM" }, {6, "3:00 PM" },
-                                                                 { 4,"4:00 PM" }, { 5, "5:00 PM" }, {6, "6:00 PM" }};
+                                                                 { 4,"4:00 PM" }, { 5, "5:00 PM" }, {6, "6:00 PM" }};*/
 
         // dispaly Table 1 
         public void DisplayTime1()
@@ -64,7 +64,7 @@ namespace BusProject
         }
 
         // Display table 2
-        public void DisplayTime2()
+      /*  public void DisplayTime2()
         {
             for (int i = 0; i < 12; i++)
             {
@@ -75,9 +75,7 @@ namespace BusProject
                     Console.WriteLine(" Press ( {0} ) To ----  Bus ID :{1} ---- Time : {2}  ",i , BusTimeLine2[i, j], BusTimeLine2[i, j + 1]  ) ;
                 }
             }
-
-
-        }
+        }*/
 
 
 
@@ -103,7 +101,7 @@ namespace BusProject
         }
 
         // Select Bus ID based On time from table 2
-        public object SelectTime2(object x)
+       /* public object SelectTime2(object x)
         {
             for (int i = 0; i < 12; i++)
             {
@@ -120,7 +118,7 @@ namespace BusProject
                 }
             }
             return 0;
-        }
+        }*/
         /*
          *  id  s  As
              0  1   2
@@ -128,8 +126,15 @@ namespace BusProject
              2
 
              */
-        public static int[,] BusSeats = new int[3, 3] { { 1,numOfSeatsBus,15 } , { 2, numOfSeatsBus, 15 },
-              { 3, numOfSeatsBus, 20 } };
+ 
+         public static int[,] BusSeats = new int[6,3] { { 1,numOfSeatsBus,15 } ,
+                                                        { 2, numOfSeatsBus, 15 },
+                                                         { 3, numOfSeatsBus, 20 } ,
+                                                          { 4,numOfSeatsBus,15 } ,
+                                                        { 5, numOfSeatsBus, 15 },
+                                                         { 6, numOfSeatsBus, 20 } };
+
+        
 
 
 
@@ -166,11 +171,11 @@ namespace BusProject
             return BusTimeLine;
         }
 
-        object[,] BusTime2()
+       /* object[,] BusTime2()
         {
 
             return BusTimeLine2;
-        }
+        }*/
 
 
     }
