@@ -81,7 +81,7 @@ namespace BusProject
 
         public  void Booking()
          {
-           int numOfSeatsBus =5;
+           int numOfSeatsBus =Bus.BusSeats ;
            
   
             string time , startStation , endStation;
