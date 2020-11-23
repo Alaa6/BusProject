@@ -33,25 +33,34 @@ namespace BusProject
             return numOfEndStation;
         }
 
-        public static int cost(int numOfStartStation, int numOfEndStation)
+        public static int cost(User u,int numOfStartStation, int numOfEndStation)
         {
 
             int Cost, age;
-
-            Console.WriteLine("Please enter your age:");
-            age = int.Parse(Console.ReadLine());
-
-            if (age > 60)
+            
+            age= u.getType();
+            
+            if (age == 0)
+            {
+                Console.WriteLine(age);
                 Cost = Math.Abs((numOfStartStation - numOfEndStation) * 1);
-            else if (age < 5)
+                Console.WriteLine(Cost);
+            }
+            else if (age == 2)
+            {
                 Cost = 0;
-            else
+                Console.WriteLine(Cost);
+            }
+            else {
                 Cost = Math.Abs((numOfStartStation - numOfEndStation) * 2);
+                Console.WriteLine(Cost);
+            }
             return Cost;
         }
 
-        public static void display()
+        public static void display(User u)
         {
+            
             Console.WriteLine("Please Choose the Start point :");
             Console.WriteLine("Stations for line1: 1 for " + Route.line1[0] + ", 2 for " + Route.line1[1] + ", 3 for " + Route.line1[2]
                 + ", 4 for " + Route.line1[3] + ", 5 for " + Route.line1[4] + ", 6 for " + Route.line1[5] + ", 7 for " + Route.line1[6]);
@@ -66,7 +75,7 @@ namespace BusProject
             setnumOfEndStation(numOfEndPoint);
 
 
-            Console.WriteLine("The Trip cost is: {0}", cost(getnumOfStartStation(), getnumOfEndStation()));
+            Console.WriteLine("The Trip cost is: {0}", cost(u,getnumOfStartStation(), getnumOfEndStation()));
         }
         public static int generation()
         {
