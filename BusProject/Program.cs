@@ -8,7 +8,6 @@ namespace BusProject {
     class Program {  
        public static void Main(string[] args){
 
-            int flag=0;
             int x=0;
             User u = new User();
 
@@ -16,8 +15,7 @@ namespace BusProject {
 
             void renhere()
             {
-              //  User u = new User();
-
+             
                 Console.WriteLine("For Register enter 1");
                 Console.WriteLine("Display Timline of buses Enter 2");
                 Console.WriteLine("For Booking Enter 3");
@@ -36,7 +34,7 @@ namespace BusProject {
 
                     u.register(name, age, mobile);
 
-                    Console.WriteLine("If you want to Repeat the process enter 1 :");
+                    Console.WriteLine("If you want to continue the process enter 1 :");
                     int ch = int.Parse(Console.ReadLine());
                     if (ch == 1)
                     {

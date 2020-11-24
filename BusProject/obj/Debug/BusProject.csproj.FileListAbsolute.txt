@@ -18,3 +18,10 @@ E:\ITI 3Month\lec\BusProject\BusProject\obj\Debug\BusProject.csprojAssemblyRefer
 E:\ITI 3Month\lec\BusProject\BusProject\obj\Debug\BusProject.csproj.CoreCompileInputs.cache
 E:\ITI 3Month\lec\BusProject\BusProject\obj\Debug\BusProject.exe
 E:\ITI 3Month\lec\BusProject\BusProject\obj\Debug\BusProject.pdb
+E:\Bus project final\BusProject\BusProject\bin\Debug\BusProject.exe.config
+E:\Bus project final\BusProject\BusProject\bin\Debug\BusProject.exe
+E:\Bus project final\BusProject\BusProject\bin\Debug\BusProject.pdb
+E:\Bus project final\BusProject\BusProject\obj\Debug\BusProject.csprojAssemblyReference.cache
+E:\Bus project final\BusProject\BusProject\obj\Debug\BusProject.csproj.CoreCompileInputs.cache
+E:\Bus project final\BusProject\BusProject\obj\Debug\BusProject.exe
+E:\Bus project final\BusProject\BusProject\obj\Debug\BusProject.pdb

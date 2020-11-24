@@ -13,7 +13,6 @@ namespace BusProject
         private static int numOfEndStation;
         private static int ticketId =0;
         private int numOfSeatsUser ;
-        private int numOfSeatsBus ;
      
 
 
@@ -114,20 +113,7 @@ namespace BusProject
             string time , startStation , endStation;
             Bus bus = new Bus();
             Route route = new Route();
-
-
-
-            /*
-                        Console.WriteLine("Please Choose Bus No :");
-                        Console.WriteLine("--------------------------------------------");
-                          bus.DisplayTime1();
-                         Console.WriteLine("--------------------------------------------");
-
-                        int chooseBusNumber  = int.Parse(Console.ReadLine()); 
-                        Console.WriteLine("--------------------------------------------");
-                        object timeChoosed = Bus.BusTimeLine[chooseBusNumber, 1 ]; 
-                        object busId = bus.SelectTime1(timeChoosed) ; 
-                        */
+           
             int busIdd=0;
             object timeChoosed=0;
             Console.WriteLine("Please Choose Bus No :");
@@ -204,14 +190,7 @@ namespace BusProject
             {
 
             }
-            
-                                                                 
-                                                                
-            //object timeChoosed = Bus.BusTimeLine[chooseBusNumber, 1];
-            
-
-
-
+  
             Console.WriteLine(" How many seats you need ? " );
             Console.WriteLine("--------------------------------------------");
              numOfSeatsUser  = int.Parse(Console.ReadLine());
@@ -227,12 +206,11 @@ namespace BusProject
                  Console.WriteLine(" | Trip Details | "+
                      "\n--------------------------------------------- " +
                     "\n Ticket ID: "+ ticketId  +
-                    // busid
                     "\n Bus ID: " + busIdd + "\n Trip line: " + " From " + Route.line1[getnumOfStartStation()-1] + " To " +Route.line1[getnumOfEndStation()-1] + "\n Time: " + timeChoosed +
                     "\n Number of seats: " + numOfSeatsUser + "\n Cost: " +cost(user ,getnumOfStartStation(), getnumOfEndStation()) * numOfSeatsUser);
                  user.display();
                
-                         }
+            }
             else
             {
                 Console.WriteLine("sorry , there are not available seats !");
