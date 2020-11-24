@@ -46,9 +46,26 @@ namespace BusProject
         // dispaly Table 1 
         public void DisplayTime1()
         {
+            int count = 0;
             for (int i = 0; i < 12; i++)
             {
+                count = count + 1;
+                for (int j = 0; j < 2; j += 2)
+                {
 
+
+
+                    Console.WriteLine("Bus ID :{0} ---- Time : {1} ----- press {2} ", BusTimeLine[i, j], BusTimeLine[i, j + 1], count);
+
+
+                }
+            }
+
+
+        } public void DisplayTimeonly()
+        {
+            for (int i = 0; i < 12; i++)
+            {
                 for (int j = 0; j < 2; j += 2)
                 {
 
@@ -64,33 +81,36 @@ namespace BusProject
         }
 
         // Display table 2
-      /*  public void DisplayTime2()
-        {
-            for (int i = 0; i < 12; i++)
-            {
+        /*  public void DisplayTime2()
+          {
+              for (int i = 0; i < 12; i++)
+              {
 
-                for (int j = 0; j < 2; j += 2)
-                {
+                  for (int j = 0; j < 2; j += 2)
+                  {
 
-                    Console.WriteLine(" Press ( {0} ) To ----  Bus ID :{1} ---- Time : {2}  ",i , BusTimeLine2[i, j], BusTimeLine2[i, j + 1]  ) ;
-                }
-            }
-        }*/
+                      Console.WriteLine(" Press ( {0} ) To ----  Bus ID :{1} ---- Time : {2}  ",i , BusTimeLine2[i, j], BusTimeLine2[i, j + 1]  ) ;
+                  }
+              }
+          }*/
 
 
 
         // Select Bus ID based On time from table 1
-        public object SelectTime1(object x)
+
+        public int SelectTime1(object x)
         {
             for (int i = 0; i < 12; i++)
             {
 
                 for (int j = 0; j < 2; j++)
                 {
-                    object xx;
+                    int xx;
+                    object xxx;
                     if (BusTimeLine[i, j] == x)
                     {
-                        xx = BusTimeLine[i, j - 1];
+                        xxx = BusTimeLine[i, j - 1];
+                        xx = Convert.ToInt32(xxx);
                         return xx;
                         break;
                     }
@@ -101,24 +121,24 @@ namespace BusProject
         }
 
         // Select Bus ID based On time from table 2
-       /* public object SelectTime2(object x)
-        {
-            for (int i = 0; i < 12; i++)
-            {
+        /* public object SelectTime2(object x)
+         {
+             for (int i = 0; i < 12; i++)
+             {
 
-                for (int j = 0; j < 2; j++)
-                {
-                    object xx;
-                    if (BusTimeLine2[i, j] == x)
-                    {
-                        xx = BusTimeLine2[i, j - 1];
-                        return xx;
-                        break;
-                    }
-                }
-            }
-            return 0;
-        }*/
+                 for (int j = 0; j < 2; j++)
+                 {
+                     object xx;
+                     if (BusTimeLine2[i, j] == x)
+                     {
+                         xx = BusTimeLine2[i, j - 1];
+                         return xx;
+                         break;
+                     }
+                 }
+             }
+             return 0;
+         }*/
         /*
          *  id  s  As
              0  1   2
@@ -126,8 +146,8 @@ namespace BusProject
              2
 
              */
- 
-         public static int[,] BusSeats = new int[6,3] { { 1,numOfSeatsBus,15 } ,
+
+        public static int[,] BusSeats = new int[6,3] { { 1,numOfSeatsBus,15 } ,
                                                         { 2, numOfSeatsBus, 15 },
                                                          { 3, numOfSeatsBus, 20 } ,
                                                           { 4,numOfSeatsBus,15 } ,

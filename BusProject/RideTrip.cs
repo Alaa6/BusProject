@@ -11,7 +11,7 @@ namespace BusProject
         
         private static int numOfStartStation;
         private static int numOfEndStation;
-        private static int ticketId =1;
+        private static int ticketId =0;
         private int numOfSeatsUser ;
         private int numOfSeatsBus ;
      
@@ -74,8 +74,30 @@ namespace BusProject
             Console.WriteLine("Stations for line1: 1 for " + Route.line1[0] + ", 2 for " + Route.line1[1] + ", 3 for " + Route.line1[2] + ", 4 for " + Route.line1[3] + ", 5 for " + Route.line1[4] + ", 6 for " + Route.line1[5] + ", 7 for " + Route.line1[6]);
             Console.WriteLine("--------------------------------------------");
             int numOfEndPoint = int.Parse(Console.ReadLine());
+            bool check = false;
+
+            do
+            {
+                //check = false;
+                if (numOfEndPoint < numOfStartPoint)
+                {
+                    Console.WriteLine("There is no Bus route for the choosen point");
+                    Console.WriteLine("Please Choose the End point, again:");
+                    Console.WriteLine("Stations for line1: 1 for " + Route.line1[0] + ", 2 for " + Route.line1[1] + ", 3 for " + Route.line1[2] + ", 4 for " + Route.line1[3] + ", 5 for " + Route.line1[4] + ", 6 for " + Route.line1[5] + ", 7 for " + Route.line1[6]);
+                    Console.WriteLine("--------------------------------------------");
+                    numOfEndPoint = int.Parse(Console.ReadLine());
+                    check = true;
+                }
+                else
+                {
+                    check = false;
+                }
+            } while (check == true);
             Console.WriteLine("--------------------------------------------");
             setnumOfEndStation(numOfEndPoint);
+            Console.WriteLine("--------------------------------------------");
+            setnumOfEndStation(numOfEndPoint);
+
         }
 
 
@@ -93,24 +115,108 @@ namespace BusProject
             Bus bus = new Bus();
             Route route = new Route();
 
-           
- 
 
+
+            /*
+                        Console.WriteLine("Please Choose Bus No :");
+                        Console.WriteLine("--------------------------------------------");
+                          bus.DisplayTime1();
+                         Console.WriteLine("--------------------------------------------");
+
+                        int chooseBusNumber  = int.Parse(Console.ReadLine()); 
+                        Console.WriteLine("--------------------------------------------");
+                        object timeChoosed = Bus.BusTimeLine[chooseBusNumber, 1 ]; 
+                        object busId = bus.SelectTime1(timeChoosed) ; 
+                        */
+            int busIdd=0;
+            object timeChoosed=0;
             Console.WriteLine("Please Choose Bus No :");
             Console.WriteLine("--------------------------------------------");
-              bus.DisplayTime1();
-             Console.WriteLine("--------------------------------------------");
-
-            int chooseBusNumber  = int.Parse(Console.ReadLine()); 
+            bus.DisplayTime1();
             Console.WriteLine("--------------------------------------------");
-            object timeChoosed = Bus.BusTimeLine[chooseBusNumber, 1 ]; 
-            object busId = bus.SelectTime1(timeChoosed) ; 
 
+            int chooseBusNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("--------------------------------------------");
+
+            if (chooseBusNumber == 1)
+            {
+                timeChoosed = "7:00 AM";
+                 busIdd = bus.SelectTime1(timeChoosed);
+            }
+
+            else if (chooseBusNumber == 2)
+            {
+                timeChoosed = "8:00 AM";
+                 busIdd = bus.SelectTime1(timeChoosed);
+            }
+            else if (chooseBusNumber == 3)
+            {
+                timeChoosed = "9:00 AM";
+                 busIdd = bus.SelectTime1(timeChoosed);
+            }
+            else if (chooseBusNumber == 4)
+            {
+                timeChoosed = "10:00 AM";
+                 busIdd = bus.SelectTime1(timeChoosed);
+            }
+            else if (chooseBusNumber == 5)
+            {
+                timeChoosed = "11:00 AM";
+                 busIdd = bus.SelectTime1(timeChoosed);
+            }
+            else if (chooseBusNumber == 6)
+            {
+                timeChoosed = "12:00 AM";
+                 busIdd = bus.SelectTime1(timeChoosed);
+            }
+            else if (chooseBusNumber == 7)
+            {
+                timeChoosed = "1:00 PM";
+                 busIdd = bus.SelectTime1(timeChoosed);
+            }
+            else if (chooseBusNumber == 8)
+            {
+                timeChoosed = "2:00 PM";
+                 busIdd = bus.SelectTime1(timeChoosed);
+            }
+            else if (chooseBusNumber == 9)
+            {
+                timeChoosed = "3:00 PM";
+                 busIdd = bus.SelectTime1(timeChoosed);
+            }
+            else if (chooseBusNumber == 10)
+            {
+                timeChoosed = "4:00 PM";
+                 busIdd = bus.SelectTime1(timeChoosed);
+            }
+            else if (chooseBusNumber == 11)
+            {
+                timeChoosed = "5:00 PM";
+                 busIdd = bus.SelectTime1(timeChoosed);
+            }
+            else if (chooseBusNumber == 12)
+            {
+                timeChoosed = "6:00 PM";
+                 busIdd = bus.SelectTime1(timeChoosed);
+            }
+
+            else
+            {
+
+            }
             
+                                                                 
+                                                                
+            //object timeChoosed = Bus.BusTimeLine[chooseBusNumber, 1];
+            
+
+
+
             Console.WriteLine(" How many seats you need ? " );
             Console.WriteLine("--------------------------------------------");
              numOfSeatsUser  = int.Parse(Console.ReadLine());
-             numOfSeatsBus =  Bus.BusSeats[chooseBusNumber, 1];
+            // chhoosebusnumber
+             numOfSeatsBus =  Bus.BusSeats[busIdd, 1];
 
             if (numOfSeatsUser < numOfSeatsBus)
             {
@@ -121,7 +227,8 @@ namespace BusProject
                  Console.WriteLine(" | Trip Details | "+
                      "\n--------------------------------------------- " +
                     "\n Ticket ID: "+ ticketId  +
-                    "\n Bus ID: " + busId + "\n Trip line: " + " From " + Route.line1[getnumOfStartStation()-1] + " To " +Route.line1[getnumOfEndStation()-1] + "\n Time: " + timeChoosed +
+                    // busid
+                    "\n Bus ID: " + busIdd + "\n Trip line: " + " From " + Route.line1[getnumOfStartStation()-1] + " To " +Route.line1[getnumOfEndStation()-1] + "\n Time: " + timeChoosed +
                     "\n Number of seats: " + numOfSeatsUser + "\n Cost: " +cost(user ,getnumOfStartStation(), getnumOfEndStation()) * numOfSeatsUser);
                  user.display();
                

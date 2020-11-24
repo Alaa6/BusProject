@@ -42,13 +42,15 @@ namespace BusProject
         }
         public User()
         {
-            User.userID = generate_id();
+            userID = generate_id();
 
         }
 
         public void register(string name, int age, string contact)
         {
 
+            
+            
             this.userAge = age;
 
             this.userName = name;
@@ -71,7 +73,7 @@ namespace BusProject
         {
             Console.WriteLine(" User Name is: {0}", this.userName);
             Console.WriteLine(" User Credit :{0}", 50 );  //this.userCredit
-            Console.WriteLine(" User ID is :{0}", User.userID);
+            Console.WriteLine(" User ID is :{0}", userID);
             Console.WriteLine(" Age is:{0}", this.userAge);
             Console.WriteLine(" User contact is {0}", this.userContact);
             
